@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="">
+  <form>
+    First Name: <input type="text" ng-model="firstname">
+
+	<br/><br/>
+	
+	Check to show a header: <input type="checkbox" ng-model="myVar1">
+
+	<br/><br/>
+
+	Select one:
+<input type="radio" ng-model="myVar" value="COGNI">Cognizant
+<input type="radio" ng-model="myVar" value="INFY">Infosys
+<input type="radio" ng-model="myVar" value="TCS">TCS
+
+<br/><br/>
+
+  Select a topic:
+  <select ng-model="myVarSelect">
+    <option value="">
+    <option value="PC">Desktop PC
+    <option value="remotpc">Remote PC
+    <option value="server">Server
+  </select>
+
+
+  </form>
+
+<div ng-switch="myVarSelect">
+  <div ng-switch-when="PC">
+     <h1>Desktop PC</h1>
+     <p>Welcome to a world Desktop PC.</p>
+  </div>
+  <div ng-switch-when="remotpc">
+     <h1>Remote PC</h1>
+     <p>Learn from Remote PC.</p>
+  </div>
+  <div ng-switch-when="server">
+     <h1>Server</h1>
+     <p>Read about Server.</p>
+  </div>
+</div>
+
+
+  <h1>You entered: {{firstname}}</h1>
+  <h1 ng-show="myVar1">My Header</h1>
+
+  <div ng-switch="myVar">
+  <div ng-switch-when="COGNI">
+     <h1>Cognizant</h1>
+     <p>Welcome to a world of Cognizant.</p>
+  </div>
+  <div ng-switch-when="INFY">
+     <h1>Infosys</h1>
+     <p>Grow with Infosys.</p>
+  </div>
+  <div ng-switch-when="TCS">
+     <h1>TCS</h1>
+     <p>Automation in TCS.</p>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

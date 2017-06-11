@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<script>
+var myApp = angular.module("myModule", []); 
+myApp.controller("myController", function($scope) {
+    $scope.products = ["A", "B", "C"];
+    $scope.addItem = function () {
+        $scope.products.push($scope.addMe);
+    }    
+    $scope.removeItem = function (x) {
+        $scope.products.splice(x, 1);
+    }
+});
+</script>
+
+<div ng-app="myModule" ng-controller="myController">
+  <ul>
+    <li ng-repeat="x in products">{{x}}<span ng-click="removeItem($index)"> [Remove] </span></li>
+  </ul>
+  <input ng-model="addMe">
+  <button ng-click="addItem()">Add</button>
+</div>
+
+<p>Click the Remove word to remove an item from the list.</p>
+
+</body>
+</html>

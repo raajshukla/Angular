@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="myDisabled=true">
+<p>
+<button ng-disabled="myDisabled">Click Me!</button>
+</p>
+<p>
+<input type="checkbox" ng-model="myDisabled"/>Button
+</p>
+<p>
+<h1>Current Value:  {{ myDisabled }}</h1>
+</p>
+<br/><br/>
+<p ng-show="true">I am visible.</p>
+
+<p ng-show="false">I am not visible.</p>
+<br/><br/>
+<p ng-hide="true">I am not visible.</p>
+
+<p ng-hide="false">I am visible.</p>
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+</head>
+<body ng-app="myModule" >
+    <div ng-controller="myController">
+        <p>Please check the browser console for the logging information.</p>
+    </div>
+    <script>
+        var myApp = angular.module('myModule', []);
+
+        myApp.controller("myController", function ($log) {
+            
+            $log.log('This is log.');
+            $log.error('This is error.');
+            $log.info('This is info.');
+            $log.warn('This is warning.');
+            $log.debug('This is debugging.');
+
+        });
+    </script>
+</body>
+</html>
