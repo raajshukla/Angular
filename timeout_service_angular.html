@@ -1,0 +1,25 @@
+<html>
+   <head>
+       <script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.js"></script> 
+      
+   </head>
+   <body ng-app = "myModule">
+     
+      <div ng-controller = "myController">
+      <br/> <br/>
+	  <h1> {{ myHeader }} </h1>
+
+	  </div>
+      
+      <script>
+			  var myApp = angular.module("myModule", []);
+				myApp.controller("myController", function($scope, $timeout) {
+				 $scope.myHeader = "Hello All!";
+				$timeout(function () {
+				 $scope.myHeader = "It's time out ?";
+			 }, 2000);
+			});
+      </script>
+              
+   </body>
+</html>

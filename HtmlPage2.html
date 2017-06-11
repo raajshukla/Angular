@@ -1,0 +1,29 @@
+<!doctype html>
+<html  ng-app="myModule">
+	<head>
+		<script src="Scripts/angular.min.js"></script>
+	</head>
+	<body ng-controller="myController">
+		<div>  
+			 {{ message }}     <!-- controller directive is responsible for this div element only , scope is only this section -->
+		</div>
+		<div>
+			 {{ message }}  
+		</div>
+
+
+		<script>
+		 
+				var myApp = angular.module("myModule", []);  // created module without any external module dependency 
+				var myController = function($scope){
+					
+					$scope.message = "Hello All";
+				};  // Created cintroller 
+
+				// now next step to register this controller with module myModule, how do we do that ?
+
+				myApp.controller("myController", myController)  // first param is the name of controller & the second is  variable name.
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html >
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.js"></script>
+	</head>
+	<body ng-app="myModule">
+
+		<div ng-controller="myController">  
+
+			<input type = "text" ng-model="message"/>
+			<br/> <br/>
+			{{message}}
+		</div>
+
+	<script>
+		 		var myApp = angular.module("myModule", []);  
+				var myController = function($scope){							
+					$scope.message = "Hello All";  //assigning complex objecct to scope object.
+				}; 
+				myApp.controller("myController", myController)  
+
+		</script>
+	</body>
+</html>

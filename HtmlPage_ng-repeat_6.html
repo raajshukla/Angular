@@ -1,0 +1,46 @@
+<!doctype html>
+<html >
+	<head>
+		<script src="Scripts/angular.js"></script>
+	</head>
+	<body ng-app="myModule">
+		<div ng-controller="myController">  
+		<table>
+			<thead>
+				<tr>
+					<th>First Name </th>
+					<th>Last Name </th>
+					<th>Gender </th>
+					<th>Salary </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees">
+				<td>{{ employee.firstName }}</td>
+				<td>{{ employee.lastName }}</td>
+				<td>{{ employee.gender }}</td>
+				<td>{{ employee.Salary }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+<script>
+	var myApp = angular.module("myModule", []);  
+	var myController = function($scope){
+					var employees = [
+
+		{	firstName : "Martin", lastName : "Oderskey", gender : "Male", Salary: 55000 },
+		{	firstName : "Sara", lastName : "Addob", gender : "Female", Salary: 56000 },
+		{	firstName : "Miko", lastName : "Ray", gender : "Female", Salary: 58000 },
+		{	firstName : "Tom", lastName : "Hok", gender : "Male", Salary: 50000 },
+		{	firstName : "Mark", lastName : "Chang", gender : "Male", Salary: 51000 }
+
+					];					
+					$scope.employees = employees;  //assigning complex objecct to scope object.
+				}; 
+				myApp.controller("myController", myController)  
+
+		</script>
+		
+	</body>
+</html>

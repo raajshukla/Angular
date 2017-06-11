@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<div ng-app="myModule" ng-controller="myController">
+
+<p>The Sum of 10+10 :</p>
+
+<h1>{{ custSum }}</h1>
+
+</div>
+
+<p>A custom service with a method that sum two numbers .</p>
+
+<script>
+var myApp = angular.module('myModule', []);
+
+myApp.service('sum', function() {
+    this.mySum = function (x) {
+        return x+x ;
+    }
+});
+myApp.controller('myController', function($scope, sum) {
+  $scope.custSum = sum.mySum(10);
+});
+</script>
+
+</body>
+</html>

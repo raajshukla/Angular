@@ -1,0 +1,38 @@
+<!doctype html>
+<html  ng-app="myModule">
+	<head>
+		<script src="Scripts/angular.js"></script>
+	</head>
+	<body ng-controller="myController">
+		<div>  
+			First Name :  {{ employee.firstName }}    
+		</div>
+		<div>  
+			Last Name :  {{ employee.lastName }}    
+		</div>
+		<div>  
+			Gender	  :	 {{ employee.gen }}    
+		</div>
+
+		
+	</body>
+
+	<script>
+		 		var myApp = angular.module("myModule", []);  
+				var myController = function($scope){
+
+					var employee = {
+
+						firstName : "Martin",
+						lastName : "Oderskey",
+						gender : "Male"
+
+					};
+					
+					$scope.employee = employee;  //assigning complex objecct to scope object.
+				}; 
+
+				myApp.controller("myController", myController)  
+
+		</script>
+</html>

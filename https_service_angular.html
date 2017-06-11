@@ -1,0 +1,42 @@
+<html>
+   <head>
+       <script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.js"></script> 
+      
+   </head>
+   <body ng-app = "myModule">
+     
+      <div ng-controller = "myController">
+      <table>
+			<thead>
+				<tr>
+					<th>Name </th>
+					<th>City </th>
+					<th>Country </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="data in myData">
+				<td>{{ data.Name | uppercase }}</td>
+				<td>{{ data.City }}</td>
+				<td>{{ data.Country }}</td>
+				</tr>
+			</tbody>
+		</table>
+	  </div>
+      
+      <script>
+
+		 var myApp = angular.module('myModule', []);
+
+		 myApp.controller('myController', function($scope, $http) {
+			 $http.get("https://www.w3schools.com/angular/customers.php").then(function(response) {
+			 $scope.myData = response.data.records;
+			 }, function myError(response) {
+				 $scope.myData = response.statusText;
+    });
+});
+	
+      </script>
+              
+   </body>
+</html>

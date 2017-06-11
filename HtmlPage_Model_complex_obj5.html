@@ -1,0 +1,44 @@
+<!doctype html>
+<html >
+	<head>
+		<script src="Scripts/angular.js"></script>
+	</head>
+	<body ng-app="myModule">
+		<div ng-controller="myController">  
+		<table>
+			<tr>
+				<td>FirstName :</td>
+				<td>
+				<input type="text" ng-model="employee.firstName"/>
+				</td>
+			</tr>
+		</table>
+		<br/>
+
+		<table>
+			<tr>
+				<td>FirstName :</td>
+				<td>
+				{{ employee.firstName }}
+				</td>
+			</tr>
+		</table>
+
+<script>
+	var myApp = angular.module("myModule", []);  
+	var myController = function($scope){
+					var employee = {
+
+					firstName : "Martin",
+					lastName : "Oderskey",
+					gender : "Male"
+
+					};					
+					$scope.employee = employee;  //assigning complex objecct to scope object.
+				}; 
+				myApp.controller("myController", myController)  
+
+		</script>
+		
+	</body>
+</html>

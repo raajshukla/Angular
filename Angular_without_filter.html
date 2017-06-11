@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.js"></script>
+	</head>
+	<body ng-app="myModule">
+		<div ng-controller="myController">
+			<table>
+				<thead>
+
+					<tr>
+						<th>Name</th>
+						<th>DOB</th>
+						<th>Gender</th>
+						<th>Salary</th>
+						<th>Salary</th>
+					</tr>
+
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>{{ employee.firstName }}</td>
+						<td>{{ employee.DOB }}</td>
+						<td>{{ employee.gender }}</td>
+						<td>{{ employee.Salary }}</td>
+						<td>{{ employee.Salary }}</td>
+					</td>
+					
+				</tbody>
+
+			</table>
+
+		</div>
+				
+	</body>
+
+	<script>
+	var myApp = angular.module("myModule", []);  
+	var myController = function($scope){
+					var employees = [
+
+		{	firstName : "Martin", DOB : new Date("November 23, 1980") , gender : "Male", Salary: 55000.788 },
+		{	firstName : "Miko", DOB :  new Date("May 05, 1970"), gender : "Female", Salary: 68000 },
+		{	firstName : "Tom", DOB :  new Date("Augest 15, 1974"), gender : "Male", Salary: 57000 }	
+
+		];					
+		$scope.employees = employees;  //assigning complex objecct to scope object.
+				
+		}; 
+				
+		myApp.controller("myController", myController)  
+
+		</script>
+</html>
